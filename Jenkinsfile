@@ -11,7 +11,7 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 // Building the image as 'my-image'
-                bat 'docker build -t my-image .' 
+                bat 'docker build -t qr .' 
             }
         }
 
@@ -23,7 +23,7 @@ pipeline {
                        3. Using 'my-image' to match the build stage
                     */
                     bat 'docker rm -f qr-container || exit 0'
-                    bat 'docker run -d -p 3000:3000 --name qr-container my-image'
+                    bat 'docker run -d -p 3000:3000 --name qr-container qr'
                 }
             }
         }
