@@ -5,14 +5,14 @@ pipeline {
 
         stage('Clone Code') {
             steps {
-                git 'https://github.com/Rajan-4900/QR.git'
+                git branch: 'main', url: 'https://github.com/Rajan-4900/QR.git'
             }
         }
 
         stage('Build Docker Image') {
             steps {
                 script {
-                    sh 'docker build -t qr .'
+                    sh ''
                 }
             }
         }
