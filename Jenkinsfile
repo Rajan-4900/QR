@@ -11,9 +11,7 @@ pipeline {
 
         stage('Build Docker Image') {
             steps {
-                script {
-                    sh ''
-                }
+                bat 'docker build -t my-image .' // 'bat' works on Windows
             }
         }
 
